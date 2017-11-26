@@ -1,0 +1,106 @@
+<style type="text/css">
+
+            body{
+              margin: 0;
+              padding: 0;
+              background: url(css/images/bakg.jpg);
+              background-size: cover;
+              font-family: sans-serif;
+            }
+
+			input[type=text], select {
+    			width: 80%;
+    			padding: 8px 12px;
+  				margin: 10px 0px;
+    			display: inline-block;
+    			border: 1px solid #ccc;
+    			border-radius: 4px;
+    			box-sizing: border-box;
+			}
+			input[type=password]{
+    			width: 80%;
+    			padding: 8px 12px;
+  				margin: 10px 0px;
+    			display: inline-block;
+    			border: 1px solid #ccc;
+    			border-radius: 4px;
+    			box-sizing: border-box;
+			}
+			input[type=submit] {
+   				width: 80%;
+    			background-color: #4CAF50;
+    			color: white;
+    			padding: 8px 20px;
+    			margin: 10px 0px;
+    			border: 1px solid #ccc;
+    			border-radius: 4px;
+    			cursor: pointer;
+			}
+            a:link {
+                color: #4CAF50;
+                background-color: transparent;
+                text-decoration: none;
+            }
+
+            .navbar{
+                overflow: hidden;
+                background-color: #333;
+                bottom: 10;
+                width: 100%;
+                position: fixed;
+                opacity: 90%;
+                border-radius: 4px;
+                background: rgba(0,0,0,.5);
+            }
+            .navbar a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 10px 1px;
+                text-decoration: none;
+                font-size: 12px;
+            }
+            .navbar a:hover {
+                background: #4CAF50;
+                color: black;
+            }
+
+            #userreg{
+                text-align: center;
+                color: white;
+            }
+            #userreg a: visited {
+                color: #4CAF50;
+            }
+            .forms{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                background: #333;
+                border-radius: 8px;
+                transform: translate(-50%,-50%);
+                width: 500px;
+                height: 280x;
+                box-sizing: border-box;
+                background: rgba(0,0,0,.5);
+                text-align: center;
+            }
+            hr{
+                color: #4CAF50;
+                width: 80%;
+            }
+		</style>
+
+
+================================================
+<script>
+            function validateReg() {
+                var x = document.forms["register"]["username"].value;
+                if (x == "") {
+                    alert("Name must be filled out");
+                    return false;
+                }
+            }
+ </script>
+onsubmit="return validateReg()"
