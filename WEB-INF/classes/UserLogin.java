@@ -21,44 +21,14 @@ public class UserLogin extends HttpServlet{
 			rsUser = stat1.executeQuery(userQuery);
 			rsAdmin = stat2.executeQuery(adminQuery);	
 
-			/*
-			//checks if the normal user has logged in
-			while(rsUser.next()){
-				if(userName.equals(rsUser.getString("UserName")) && password.equals(rsUser.getString("Password"))){
-					session.setAttribute("uName",userName);
-					rd = request.getRequestDispatcher("./Home.jsp");
-					//request.setAttribute("uName",userName);
-					//rd.include(request, response);
-					response.sendRedirect("./Home.jsp");
-				}
-				else{
-					out.println("<h3>Login UnSuccessfull. Either Username or Password is invalid. <a href = "+"./Index.html>Please try again</a>.</h3>");
-				}
-			}
-		
-
-			//checks if the admin has logged in
-			while(rsAdmin.next()){
-				if(userName.equals(rsAdmin.getString("UserName")) && password.equals(rsAdmin.getString("Password"))){
-					session.setAttribute("uName",userName);
-					rd = request.getRequestDispatcher("./AdminHome.jsp");
-					//request.setAttribute("uName",userName);
-					//rd.include(request, response);
-					response.sendRedirect("./AdminHome.jsp");
-				}
-				else{
-					out.println("<h3>Login UnSuccessfull. Either Username or Password is invalid. <a href = "+"./Index.html>Please try again</a>.</h3>");
-				}
-			}
-			*/
 			if(rsUser.next()){
 				rd = request.getRequestDispatcher("./Home.jsp");
-				request.setAttribute("uName",userName);
+				session.setAttribute("uName",userName);
 				rd.include(request , response);
 			}
 			else if(rsAdmin.next()){
 				rd = request.getRequestDispatcher("./AdminHome.jsp");
-				request.setAttribute("uName",userName);
+				session.setAttribute("uName",userName);
 				rd.include(request , response);
 			}
 			else{
